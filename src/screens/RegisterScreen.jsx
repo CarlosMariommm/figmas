@@ -13,7 +13,19 @@ const RegisterScreen = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate registration
+    
+    // TODO (API): Reemplazar la simulación de abajo por tu llamada POST para crear el usuario.
+    // Ejemplo:
+    // try {
+    //   await fetch('/api/register', { 
+    //     method: 'POST', 
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email, username, phone, password }) 
+    //   });
+    //   navigate('/dashboard');
+    // } catch (error) { ... }
+
+    // Simulación actual:
     setTimeout(() => {
       setIsLoading(false);
       navigate('/dashboard');

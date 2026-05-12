@@ -11,7 +11,21 @@ const LoginScreen = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate login
+    
+    // TODO (API): Reemplazar la simulación de abajo por tu llamada real a la API.
+    // Ejemplo:
+    // try {
+    //   const response = await fetch('/api/login', { 
+    //     method: 'POST', 
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ email, password }) 
+    //   });
+    //   const data = await response.json();
+    //   // Guardar token en localStorage o Context...
+    //   navigate('/dashboard');
+    // } catch (error) { ... }
+    
+    // Simulación actual:
     setTimeout(() => {
       setIsLoading(false);
       navigate('/dashboard');

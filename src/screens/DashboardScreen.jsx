@@ -7,6 +7,12 @@ import KanbanColumn from '../components/KanbanColumn';
 import CreateTaskModal from '../components/CreateTaskModal';
 
 const DashboardScreen = () => {
+  // TODO (API): En lugar de iniciar con mockTasks, el estado inicial debería ser un arreglo vacío [].
+  // Luego, usar un useEffect para hacer un GET a la API y cargar las tareas reales del usuario.
+  // Ejemplo:
+  // useEffect(() => {
+  //   fetch('/api/tasks').then(res => res.json()).then(data => setTasks(data));
+  // }, []);
   const [tasks, setTasks] = useState(mockTasks);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [initialStatusForModal, setInitialStatusForModal] = useState('todo');
@@ -17,10 +23,23 @@ const DashboardScreen = () => {
   };
 
   const handleSaveTask = (newTask) => {
+    // TODO (API): Hacer un POST a tu API para crear la tarea en la base de datos antes de actualizar el estado local.
+    // Ejemplo:
+    // fetch('/api/tasks', { method: 'POST', body: JSON.stringify(newTask) })
+    //   .then(res => res.json())
+    //   .then(savedTask => setTasks(prevTasks => [savedTask, ...prevTasks]));
+    
+    // Lógica local actual:
     setTasks(prevTasks => [newTask, ...prevTasks]);
   };
 
   const handleDeleteTask = (taskId) => {
+    // TODO (API): Hacer un DELETE a tu API pasándole el ID de la tarea a eliminar.
+    // Ejemplo:
+    // fetch(`/api/tasks/${taskId}`, { method: 'DELETE' })
+    //   .then(() => setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId)));
+
+    // Lógica local actual:
     setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
   };
 
